@@ -22,10 +22,12 @@ activate_menu:
 	@-sed -i '' 's/.*partials\/menu.*/\t{% include "partials\/menu.html" %}/' templates/interests.html
 
 deploy:
-	@-sed -i '' "s/skills/\/cv_web\/skills.html/" templates/partials/menu.html
-	@-sed -i '' "s/employment/\/cv_web\/employment.html/" templates/partials/menu.html
-	@-sed -i '' "s/education/\/cv_web\/education.html/" templates/partials/menu.html
-	@-sed -i '' "s/interests/\/cv_web\/interests.html/" templates/partials/menu.html
+	@-sed -i '' "s/href='skills'/href='\/cv_web\/skills.html'/" templates/partials/menu.html
+	@-sed -i '' "s/href='employment'/href='\/cv_web\/employment.html'/" templates/partials/menu.html
+	@-sed -i '' "s/href='education'/href='\/cv_web\/education.html'/" templates/partials/menu.html
+	@-sed -i '' "s/href='interests'/href='\/cv_web\/interests.html'/" templates/partials/menu.html
+
+backup:
 	@-curl -s localhost:8000/skills     > docs/index.html
 	@-curl -s localhost:8000/employment > docs/employment.html
 	@-curl -s localhost:8000/education  > docs/education.html
