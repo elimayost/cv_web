@@ -23,13 +23,8 @@ activate_menu:
 
 deploy:
 	@-sed -i '' "1,4 s/href='/&cv_web/g" templates/partials/menu.html
-	@-gunicorn -w 4 --reload app:app &>/dev/null &
 	@-curl -s localhost:8000/skills     > docs/index.html
 	@-curl -s localhost:8000/employment > docs/employment.html
 	@-curl -s localhost:8000/education  > docs/education.html
 	@-curl -s localhost:8000/interests  > docs/interests.html
 	@-sed -i '' "1,4 s/cv_web//g" templates/partials/menu.html
-	@-git add .
-	@-git commit -m 'backup'
-	@-git push
-
