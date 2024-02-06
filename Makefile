@@ -22,7 +22,7 @@ activate_menu:
 	@-sed -i '' 's/.*partials\/menu.*/\t{% include "partials\/menu.html" %}/' templates/interests.html
 
 deploy:
-	@-sed -i '' "s/href='skills'/href='\/cv_web\/skills.html'/" templates/partials/menu.html
+	@-sed -i '' "s/href='skills'/href='\/'/" templates/partials/menu.html
 	@-sed -i '' "s/href='employment'/href='\/cv_web\/employment.html'/" templates/partials/menu.html
 	@-sed -i '' "s/href='education'/href='\/cv_web\/education.html'/" templates/partials/menu.html
 	@-sed -i '' "s/href='interests'/href='\/cv_web\/interests.html'/" templates/partials/menu.html
@@ -30,7 +30,7 @@ deploy:
 	@-curl -s localhost:8000/employment > docs/employment.html
 	@-curl -s localhost:8000/education  > docs/education.html
 	@-curl -s localhost:8000/interests  > docs/interests.html
-	@-sed -i '' "s/href='\/cv_web\/skills.html'/href='skills'/" templates/partials/menu.html
+	@-sed -i '' "s/href='\/'/href='skills'/" templates/partials/menu.html
 	@-sed -i '' "s/href='\/cv_web\/employment.html'/href='employment'/" templates/partials/menu.html
 	@-sed -i '' "s/href='\/cv_web\/education.html'/href='education'/" templates/partials/menu.html
 	@-sed -i '' "s/href='\/cv_web\/interests.html'/href='interests'/" templates/partials/menu.html
