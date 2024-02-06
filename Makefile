@@ -26,13 +26,11 @@ deploy:
 	@-sed -i '' "s/href='employment'/href='\/cv_web\/employment.html'/" templates/partials/menu.html
 	@-sed -i '' "s/href='education'/href='\/cv_web\/education.html'/" templates/partials/menu.html
 	@-sed -i '' "s/href='interests'/href='\/cv_web\/interests.html'/" templates/partials/menu.html
-
-backup:
 	@-curl -s localhost:8000/skills     > docs/index.html
 	@-curl -s localhost:8000/employment > docs/employment.html
 	@-curl -s localhost:8000/education  > docs/education.html
 	@-curl -s localhost:8000/interests  > docs/interests.html
-	@-sed -i '' "s/\/cv_web\/skills.html/skills/" templates/partials/menu.html
-	@-sed -i '' "s/\/cv_web\/employment.html/employment/" templates/partials/menu.html
-	@-sed -i '' "s/\/cv_web\/education.html/education/" templates/partials/menu.html
-	@-sed -i '' "s/\/cv_web\/interests.html/interests/" templates/partials/menu.html
+	@-sed -i '' "s/href='\/cv_web\/skills.html'/href='skills'/" templates/partials/menu.html
+	@-sed -i '' "s/href='\/cv_web\/employment.html'/href='employment'/" templates/partials/menu.html
+	@-sed -i '' "s/href='\/cv_web\/education.html'/href='education'/" templates/partials/menu.html
+	@-sed -i '' "s/href='\/cv_web\/interests.html'/href='interests'/" templates/partials/menu.html
