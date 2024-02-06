@@ -22,4 +22,7 @@ activate_menu:
 	@-sed -i '' 's/.*partials\/menu.*/\t{% include "partials\/menu.html" %}/' templates/interests.html
 
 deploy:
-	@-cp templates/skills templatesindex.html
+	@-curl -s localhost:8000/skills     > docs/index.html
+	@-curl -s localhost:8000/employment > docs/employment.html
+	@-curl -s localhost:8000/education  > docs/education.html
+	@-curl -s localhost:8000/interests  > docs/interests.html
