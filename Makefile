@@ -28,3 +28,6 @@ deploy:
 	@-curl -s localhost:8000/interests  > docs/interests.html
 	@-cp pdf/elimayost-cv.pdf docs/elimayost-cv.pdf
 	@-sed -i '' "s/href='\/pdf'/href='elimayost-cv.pdf'/" docs/*.html
+	@-git add .
+	@-git commit -m 'backup'
+	@-git push
