@@ -7,3 +7,4 @@ To generate the PDF:
 3. generate the pdf
 4. activate the menu and title
 5. restart the flask server
+6. deploy
